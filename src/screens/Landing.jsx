@@ -1,0 +1,138 @@
+import { useNavigate } from "react-router-dom";
+import {
+  Workflow,
+  Sparkles,
+  Wand2,
+  ArrowRight,
+  Check,
+  Hexagon,
+  Triangle,
+  Circle,
+  Diamond,
+  Square,
+} from "lucide-react";
+import { Badge } from "../components/ui/badge.jsx";
+import { Button } from "../components/ui/button.jsx";
+import BottomNav from "../components/BottomNav.jsx";
+
+export default function Landing() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="bg-[linear-gradient(180deg,oklch(0.141_0.005_285.823)_0%,oklch(0.21_0.02_293)_60%,oklch(0.141_0.005_285.823)_100%)] bg-zinc-950 text-neutral-50 flex flex-col w-full min-h-screen overflow-hidden">
+      <div className="overflow-y-auto flex px-8 pt-8 pb-6 flex-col items-center flex-1">
+        <div className="flex mb-12 justify-between items-center w-full">
+          <div className="flex items-center gap-2">
+            <div className="size-8 shadow-[0_0_20px_oklch(0.541_0.281_293.009/.6)] rounded-xl bg-[#7f22fe] flex justify-center items-center">
+              <Workflow className="size-5 text-violet-50" />
+            </div>
+            <span className="font-bold text-lg leading-7 tracking-tight">
+              Flowstep
+            </span>
+          </div>
+          <Badge className="rounded-full bg-zinc-800 text-neutral-50 border-white/10 border-1 border-solid px-2 py-1 gap-1">
+            <Sparkles className="size-3 text-[#7f22fe]" />
+            <span className="font-medium text-xs leading-4">AI</span>
+          </Badge>
+        </div>
+
+        <div className="text-center flex flex-col items-center gap-4 w-full">
+          <div className="inline-flex rounded-full bg-[#7f22fe]/10 border-[#7f22fe]/30 border-1 border-solid px-4 py-1 items-center gap-2">
+            <span className="size-1.5 rounded-full bg-[#7f22fe]" />
+            <span className="font-medium text-[#7f22fe] text-xs leading-4">
+              Design at the speed of thought
+            </span>
+          </div>
+          <h1 className="font-bold text-4xl leading-10 tracking-tight">
+            Design Apps with
+            <span className="[text-shadow:0_0_24px_oklch(0.541_0.281_293.009/.7)] text-[#7f22fe]">
+              {" "}
+              AI{" "}
+            </span>
+            in Seconds
+          </h1>
+          <p className="max-w-[320px] text-[#9f9fa9] text-base leading-6">
+            Flowstep generates and edits beautiful app screens through a
+            simple chat. No design skills required.
+          </p>
+        </div>
+
+        <div className="flex mt-8 flex-col gap-2 w-full">
+          <Button
+            onClick={() => navigate("/signup")}
+            className="bg-[linear-gradient(90deg,oklch(0.541_0.281_293.009),oklch(0.627_0.265_303.9))] font-bold shadow-[0_8px_30px_oklch(0.541_0.281_293.009/.5)] rounded-xl text-violet-50 text-base leading-6 w-full h-12"
+          >
+            <Wand2 className="size-5" />
+            Try Flowstep Free
+          </Button>
+          <Button
+            onClick={() => navigate("/prompt")}
+            variant="outline"
+            className="bg-transparent font-semibold rounded-xl text-[#7f22fe] text-base leading-6 border-[#7f22fe]/60 border-1 border-solid w-full h-12"
+          >
+            See Examples
+            <ArrowRight className="size-4" />
+          </Button>
+        </div>
+
+        <div className="relative flex mt-10 justify-center w-full">
+          <div className="blur-2xl bg-[radial-gradient(ellipse_at_center,oklch(0.541_0.281_293.009/.45),transparent_70%)] absolute -inset-4" />
+          <div className="relative shadow-[0_20px_60px_oklch(0.141_0.005_285.823/.8)] rounded-3xl bg-zinc-900 border-white/10 border-1 border-solid p-3 w-60">
+            <div className="rounded-2xl overflow-hidden">
+              <div className="bg-zinc-800 flex px-3 py-2 items-center gap-1.5">
+                <span className="size-2 rounded-full bg-[#ff6467]/70" />
+                <span className="size-2 rounded-full bg-[#fe9a00]/70" />
+                <span className="size-2 rounded-full bg-[#00bc7d]/70" />
+                <div className="flex justify-center flex-1">
+                  <div className="rounded-full bg-zinc-800 flex justify-center items-center gap-1 w-28 h-4">
+                    <Sparkles className="size-2.5 text-[#7f22fe]" />
+                    <span className="text-[#9f9fa9] text-[8px]">
+                      Generating...
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full h-[280px]">
+                <img
+                  src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODc2NDd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkYXNoYm9hcmQlMjB1aSUyMGRlc2lnbiUyMHNjcmVlbiUyMG1vY2t1cCUyMGRhcmt8ZW58MXwxfHx8MTc4NTM2ODg3OHww&ixlib=rb-4.1.0&q=80&w=400"
+                  alt="App screen mockup generated by AI"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+            <div className="shadow-[0_8px_24px_oklch(0.541_0.281_293.009/.6)] rounded-xl bg-[#7f22fe] flex absolute -right-3 -bottom-3 px-3 py-2 items-center gap-1.5">
+              <Check className="size-3.5 text-violet-50" />
+              <span className="font-bold text-violet-50 text-[10px]">
+                Done in 4s
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex mt-12 flex-col items-center gap-4 w-full">
+          <div className="flex items-center gap-2">
+            <div className="-space-x-2 flex">
+              <span className="size-6 rounded-full bg-[#1447e6] border-zinc-950 border-1 border-solid" />
+              <span className="size-6 rounded-full bg-[#ad46ff] border-zinc-950 border-1 border-solid" />
+              <span className="size-6 rounded-full bg-[#00bc7d] border-zinc-950 border-1 border-solid" />
+              <span className="size-6 rounded-full bg-[#7f22fe] border-zinc-950 border-1 border-solid" />
+            </div>
+            <p className="text-[#9f9fa9] text-xs leading-4">
+              <span className="font-semibold text-neutral-50">10,000+ </span>
+              designers building with Flowstep
+            </p>
+          </div>
+          <div className="opacity-50 flex justify-center items-center gap-6">
+            <Hexagon className="size-5 text-[#9f9fa9]" />
+            <Triangle className="size-5 text-[#9f9fa9]" />
+            <Circle className="size-5 text-[#9f9fa9]" />
+            <Diamond className="size-5 text-[#9f9fa9]" />
+            <Square className="size-5 text-[#9f9fa9]" />
+          </div>
+        </div>
+      </div>
+
+      <BottomNav active="home" />
+    </div>
+  );
+}
